@@ -2,7 +2,7 @@
 - Java and OOP
 - Maven
 - TestNG
-- Page Object Pattern (POM)
+- Page Object Pattern (POM) and Fluent Pattern design
 - Data Driven Test  (DDT) , Properties file , Data Provider , Excel file , CSV file , JSON file
 - Java Faker Library
 - Behavior Data Driven (BDD) , Cucumber
