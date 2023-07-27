@@ -26,7 +26,7 @@ public class TestBase  extends AbstractTestNGCucumberTests {
 		option.setExperimentalOption("prefs", chromeprefs);
 		option.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
 		return option;
-		
+
 	}
 
 	@BeforeSuite
@@ -41,18 +41,25 @@ public class TestBase  extends AbstractTestNGCucumberTests {
 		{
 			drive = new FirefoxDriver();
 		}
+		else if (browsername.equalsIgnoreCase("chromeheadless")) 
+		{
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("--headless");
+			option.addArguments("--window-size=1920,1080");
+			drive = new ChromeDriver(option);
+		}
 
 		drive.manage().window().maximize();
 		drive.navigate().to("https://demo.nopcommerce.com/");
 
 	}
-	
+
 	@AfterSuite
 	public void stopDriver() 
 	{
 		drive.quit();
 	}
-	
+
 	@AfterMethod
 	public void screenshotOnFailure (ITestResult result) 
 	{
