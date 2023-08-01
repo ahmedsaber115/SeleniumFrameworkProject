@@ -8,6 +8,7 @@
 - Behavior Data Driven (BDD) , Cucumber
 - Allure and Cucumber Report
 - take screenshots of failed test cases
+- Headless Testing
 
 Test Suits 
 - User Registration
