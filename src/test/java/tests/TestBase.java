@@ -1,14 +1,15 @@
 package tests;
 import java.util.HashMap;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -29,7 +30,7 @@ public class TestBase  extends AbstractTestNGCucumberTests {
 
 	}
 
-	@BeforeSuite
+	@BeforeClass
 	@org.testng.annotations.Parameters({"browser"})
 	public void startDriver(@Optional("chrome") String browsername)
 	{
@@ -54,7 +55,7 @@ public class TestBase  extends AbstractTestNGCucumberTests {
 
 	}
 
-	@AfterSuite
+	@AfterClass
 	public void stopDriver() 
 	{
 		drive.quit();
